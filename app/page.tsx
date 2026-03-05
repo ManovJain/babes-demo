@@ -17,6 +17,7 @@ function RotatingBadge() {
   return (
     <Link
       href="/models"
+      title="Browse Models"
       className="absolute bottom-8 right-6 md:bottom-12 md:right-12 group"
     >
       <div className="relative h-24 w-24 md:h-28 md:w-28">
@@ -101,6 +102,7 @@ function FeaturedSection() {
           </div>
           <Link
             href="/models"
+            title="View All Models"
             className="hidden sm:inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase text-muted-foreground transition-colors hover:text-foreground"
           >
             View All

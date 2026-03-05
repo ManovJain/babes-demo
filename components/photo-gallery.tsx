@@ -88,6 +88,7 @@ export function PhotoGallery({ images, modelName, videoUrl }: PhotoGalleryProps)
               onClick={() => openModal(index)}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
+              title={`View ${modelName} photo ${index + 1}`}
               className="group relative flex-shrink-0 w-[200px] md:w-[280px] aspect-[3/4] rounded-2xl overflow-hidden bg-muted focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2"
             >
               {/* Static image */}
@@ -134,6 +135,7 @@ export function PhotoGallery({ images, modelName, videoUrl }: PhotoGalleryProps)
           {/* Close button */}
           <button
             onClick={closeModal}
+            title="Close"
             className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-muted text-foreground transition-colors hover:bg-muted/80"
           >
             <X className="h-5 w-5" />
@@ -146,6 +148,7 @@ export function PhotoGallery({ images, modelName, videoUrl }: PhotoGalleryProps)
               e.stopPropagation()
               goToPrevious()
             }}
+            title="Previous photo"
             className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-muted text-foreground transition-colors hover:bg-muted/80"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -158,6 +161,7 @@ export function PhotoGallery({ images, modelName, videoUrl }: PhotoGalleryProps)
               e.stopPropagation()
               goToNext()
             }}
+            title="Next photo"
             className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-muted text-foreground transition-colors hover:bg-muted/80"
           >
             <ChevronRight className="h-6 w-6" />

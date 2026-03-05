@@ -29,7 +29,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex items-center justify-between px-5 py-5 md:px-8">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2" title="Home">
           <Image
             src="/images/logo.png"
             alt="Babes"
@@ -53,6 +53,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
+              title={link.label}
               className={cn(
                 "text-xs tracking-[0.15em] uppercase transition-colors",
                 isHome
@@ -77,6 +78,7 @@ export function SiteHeader() {
           )}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          title={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -92,6 +94,7 @@ export function SiteHeader() {
             <Link
               href="/"
               onClick={() => setMobileOpen(false)}
+              title="Home"
               className={cn(
                 "text-lg tracking-wide transition-colors",
                 pathname === "/" ? "text-foreground" : "text-muted-foreground"
@@ -104,6 +107,7 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
+                title={link.label}
                 className={cn(
                   "text-lg tracking-wide transition-colors",
                   pathname === link.href

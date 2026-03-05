@@ -9,7 +9,7 @@ interface ModelCardProps {
 
 export function ModelCard({ model, priority = false }: ModelCardProps) {
   return (
-    <Link href={`/models/${model.slug}`} className="group block">
+    <Link href={`/models/${model.slug}`} title={`View ${model.name}`} className="group block">
       <div className="relative aspect-[3/4] overflow-hidden bg-secondary">
         <Image
           src={model.image}
@@ -24,7 +24,7 @@ export function ModelCard({ model, priority = false }: ModelCardProps) {
       <div className="mt-4">
         <h3 className="font-serif text-lg tracking-wide text-foreground">{model.name}</h3>
         <p className="mt-1 text-xs tracking-[0.15em] uppercase text-muted-foreground">
-          {model.categories.join(" / ")}
+          {model.location}
         </p>
       </div>
     </Link>

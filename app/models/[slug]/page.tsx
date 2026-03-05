@@ -4,6 +4,8 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowRight, Clock, Heart, Instagram, MessageCircle } from "lucide-react"
 import { getModelBySlug, models } from "@/lib/models-data"
 import { PhotoGallery } from "@/components/photo-gallery"
+import { ModelReviews, ModelRatingBadge } from "@/components/model-reviews"
+import { CollapsibleSection } from "@/components/collapsible-section"
 
 export function generateStaticParams() {
   return models.map((m) => ({ slug: m.slug }))
@@ -46,6 +48,7 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
         {/* Back button */}
         <Link
           href="/models"
+          title="Back to Models"
           className="absolute top-24 left-5 md:left-8 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-lg text-foreground transition-transform hover:scale-105"
         >
           <ArrowLeft className="h-4 w-4" />
@@ -63,12 +66,14 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
               <p className="text-xs text-muted-foreground mt-1">
                 Babes Agency
               </p>
+              <ModelRatingBadge modelSlug={model.slug} />
             </div>
             {model.instagram && (
-              <a 
+              <a
                 href={`https://instagram.com/${model.instagram.replace('@', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={`${model.name} on Instagram`}
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground/10 text-foreground transition-colors hover:bg-foreground/20"
               >
                 <Instagram className="h-4 w-4" />
@@ -92,12 +97,6 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
             </div>
           </div>
 
-          {/* Experience */}
-          <div className="mt-5">
-            <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Experience</p>
-            <p className="mt-1 text-sm text-foreground">{model.categories.join(", ")}</p>
-          </div>
-
           {/* Location */}
           <div className="mt-4">
             <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Location</p>
@@ -107,6 +106,7 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
           {/* Book button */}
           <Link
             href={`/booking?model=${model.slug}`}
+            title={`Book ${model.name}`}
             className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-foreground py-3.5 text-[11px] tracking-[0.15em] uppercase text-background transition-opacity hover:opacity-90"
           >
             Book Now
@@ -183,6 +183,7 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
             <div className="mt-8 text-center">
               <Link
                 href={`/booking?model=${model.slug}`}
+                title={`Book ${model.name.split(' ')[0]}`}
                 className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-3.5 text-[11px] tracking-[0.15em] uppercase text-background transition-opacity hover:opacity-90"
               >
                 Book {model.name.split(' ')[0]}
@@ -197,15 +198,16 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
       {model.blog && model.blog.length > 0 && (
         <section className="px-5 py-12 md:px-12">
           <div className="mx-auto max-w-2xl">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-2">
               <h2 className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                {model.name.split(' ')[0]}'s Feed
+                {model.name.split(' ')[0]}&apos;s Feed
               </h2>
               {model.instagram && (
-                <a 
+                <a
                   href={`https://instagram.com/${model.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="View Instagram"
                   className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {model.instagram}
@@ -213,6 +215,7 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
               )}
             </div>
 
+            <CollapsibleSection>
             <div className="space-y-4">
               {model.blog.map((post) => (
                 <article 
@@ -254,11 +257,11 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
 
                   {/* Post actions */}
                   <div className="flex items-center gap-4 pt-2 border-t border-border/50">
-                    <button className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
+                    <button title="Like" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
                       <Heart className="h-4 w-4" />
                       <span className="text-xs">{post.likes.toLocaleString()}</span>
                     </button>
-                    <button className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
+                    <button title="Reply" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
                       <MessageCircle className="h-4 w-4" />
                       <span className="text-xs">Reply</span>
                     </button>
@@ -266,15 +269,25 @@ export default async function ModelProfilePage({ params }: { params: Promise<{ s
                 </article>
               ))}
             </div>
+            </CollapsibleSection>
           </div>
         </section>
       )}
+
+      {/* Reviews section */}
+      <section className="px-5 py-12 md:px-12">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-6">Reviews</h2>
+          <ModelReviews modelSlug={model.slug} />
+        </div>
+      </section>
 
       {/* Back link */}
       <section className="px-5 pb-16 md:px-12">
         <div className="mx-auto max-w-2xl">
           <Link
             href="/models"
+            title="Back to All Models"
             className="inline-flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-3.5 w-3.5" />

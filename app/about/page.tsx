@@ -118,6 +118,7 @@ export default function AboutPage() {
             </p>
             <Link
               href="/contact"
+              title="Contact Us"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-8 py-3 text-[11px] tracking-[0.15em] uppercase text-primary transition-opacity hover:opacity-90"
             >
               Contact Us
