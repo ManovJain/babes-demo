@@ -117,6 +117,7 @@ export function BookingForm() {
               key={model.slug}
               type="button"
               onClick={() => setSelectedModel(model.slug)}
+              title={`Select ${model.name}`}
               className={cn(
                 "relative flex-shrink-0 rounded-2xl overflow-hidden transition-all",
                 selectedModel === model.slug
@@ -173,6 +174,7 @@ export function BookingForm() {
                 setLocation("")
                 setShowLocationSearch(true)
               }}
+              title="Clear location"
               className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
             >
               <X className="h-4 w-4" />
@@ -203,6 +205,7 @@ export function BookingForm() {
                     key={i}
                     type="button"
                     onClick={() => selectLocation(loc)}
+                    title={`Select ${loc.name}`}
                     className="w-full text-left px-3 py-2.5 rounded-lg hover:bg-secondary transition-colors"
                   >
                     <p className="text-sm font-medium text-foreground">{loc.name}</p>
@@ -219,6 +222,7 @@ export function BookingForm() {
                 <button
                   type="button"
                   onClick={() => setShowLocationSearch(false)}
+                  title="Close location search"
                   className="w-full text-xs text-muted-foreground hover:text-foreground py-1"
                 >
                   Close
@@ -272,6 +276,7 @@ export function BookingForm() {
               key={d.id}
               type="button"
               onClick={() => setDuration(d.id)}
+              title={`Select ${d.label}`}
               className={cn(
                 "rounded-xl p-4 text-left transition-all",
                 duration === d.id
@@ -302,6 +307,7 @@ export function BookingForm() {
               key={service}
               type="button"
               onClick={() => toggleService(service)}
+              title={`Toggle ${service}`}
               className={cn(
                 "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                 selectedServices.includes(service)
@@ -332,6 +338,7 @@ export function BookingForm() {
           <button
             type="button"
             onClick={copyMessage}
+            title="Copy booking message"
             className={cn(
               "absolute top-3 right-3 flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
               copied
@@ -364,6 +371,7 @@ export function BookingForm() {
           target={isFormValid ? "_blank" : undefined}
           rel="noopener noreferrer"
           onClick={(e) => !isFormValid && e.preventDefault()}
+          title="Send booking via WhatsApp"
           className={cn(
             "flex items-center justify-center gap-3 rounded-xl py-4 text-sm font-medium transition-colors",
             isFormValid
@@ -382,6 +390,7 @@ export function BookingForm() {
           target={isFormValid ? "_blank" : undefined}
           rel="noopener noreferrer"
           onClick={(e) => !isFormValid && e.preventDefault()}
+          title="Send booking via Telegram"
           className={cn(
             "flex items-center justify-center gap-3 rounded-xl py-4 text-sm font-medium transition-colors",
             isFormValid

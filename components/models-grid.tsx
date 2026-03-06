@@ -121,6 +121,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
         </div>
         <button
           onClick={() => setShowFilters(!showFilters)}
+          title="Toggle filters"
           className={cn(
             "flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors",
             showFilters || activeFilterCount > 0
@@ -148,6 +149,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
             {activeFilterCount > 0 && (
               <button
                 onClick={clearFilters}
+                title="Clear all filters"
                 className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1"
               >
                 <X className="h-3 w-3" />
@@ -166,6 +168,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
                 <button
                   key={service}
                   onClick={() => toggleService(service)}
+                  title={`Filter by ${service}`}
                   className={cn(
                     "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                     selectedServices.includes(service)
@@ -189,6 +192,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
                 <button
                   key={type}
                   onClick={() => toggleBodyType(type)}
+                  title={`Filter by ${type}`}
                   className={cn(
                     "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                     selectedBodyTypes.includes(type)
@@ -212,6 +216,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
                 <button
                   key={attr}
                   onClick={() => toggleAttribute(attr)}
+                  title={`Filter by ${attr}`}
                   className={cn(
                     "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                     selectedAttributes.includes(attr)
@@ -239,6 +244,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
                       selectedAgeRange === range.label ? null : range.label
                     )
                   }
+                  title={`Filter by age ${range.label}`}
                   className={cn(
                     "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                     selectedAgeRange === range.label
@@ -265,6 +271,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
               {service}
               <button
                 onClick={() => toggleService(service)}
+                title={`Remove ${service} filter`}
                 className="hover:text-destructive"
               >
                 <X className="h-3 w-3" />
@@ -279,6 +286,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
               {type}
               <button
                 onClick={() => toggleBodyType(type)}
+                title={`Remove ${type} filter`}
                 className="hover:text-destructive"
               >
                 <X className="h-3 w-3" />
@@ -293,6 +301,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
               {attr}
               <button
                 onClick={() => toggleAttribute(attr)}
+                title={`Remove ${attr} filter`}
                 className="hover:text-destructive"
               >
                 <X className="h-3 w-3" />
@@ -304,6 +313,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
               {selectedAgeRange} years
               <button
                 onClick={() => setSelectedAgeRange(null)}
+                title="Remove age filter"
                 className="hover:text-destructive"
               >
                 <X className="h-3 w-3" />
@@ -332,6 +342,7 @@ export function ModelsGrid({ models }: ModelsGridProps) {
           </p>
           <button
             onClick={clearFilters}
+            title="Clear all filters"
             className="text-sm text-foreground underline hover:no-underline"
           >
             Clear all filters
