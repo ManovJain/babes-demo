@@ -129,6 +129,15 @@
   }
 }
 
+/* Gold gradient for branded text */
+.text-gold {
+  background: linear-gradient(135deg, #856220 0%, #F4E683 28%, #BF923D 50%, #4E341B 75%, #F1EA82 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
 /* Custom animations */
 @keyframes spin-slow {
   from {

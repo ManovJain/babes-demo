@@ -27,7 +27,7 @@ export function ContactForm() {
         <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary">
           <Check className="h-5 w-5 text-primary-foreground" />
         </div>
-        <h3 className="font-serif text-xl tracking-wide text-foreground">Message Sent</h3>
+        <h3 className="font-serif text-xl tracking-wide text-gold">Message Sent</h3>
         <p className="mt-2 max-w-sm text-xs leading-relaxed text-muted-foreground">
           Thank you for reaching out. We&apos;ll get back to you as soon as possible.
         </p>

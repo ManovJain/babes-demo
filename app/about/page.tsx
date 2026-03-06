@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="relative flex h-full flex-col justify-end px-5 pb-12 md:px-12 md:pb-16">
           <p className="text-[10px] tracking-[0.3em] uppercase text-card/70 mb-2">Our Story</p>
-          <h1 className="font-serif text-4xl tracking-wide text-card md:text-6xl">About Babes</h1>
+          <h1 className="font-serif text-4xl tracking-wide text-gold md:text-6xl">About Babes</h1>
         </div>
       </section>
 
@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <div>
             <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">Premium Companionship</p>
-            <h2 className="font-serif text-2xl tracking-wide text-foreground md:text-3xl">
+            <h2 className="font-serif text-2xl tracking-wide text-gold md:text-3xl">
               Exceptional Experiences, Every Time
             </h2>
             <div className="mt-5 flex flex-col gap-3">
@@ -68,7 +68,7 @@ export default function AboutPage() {
             { value: "VIP", label: "Service" },
           ].map((stat) => (
             <div key={stat.label} className="rounded-2xl bg-card border border-border p-6 text-center">
-              <span className="font-serif text-2xl tracking-wide text-foreground md:text-3xl">{stat.value}</span>
+              <span className="font-serif text-2xl tracking-wide text-gold md:text-3xl">{stat.value}</span>
               <p className="mt-1 text-[10px] tracking-[0.15em] uppercase text-muted-foreground">{stat.label}</p>
             </div>
           ))}
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-8">
             <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">Our Promise</p>
-            <h2 className="font-serif text-2xl tracking-wide text-foreground md:text-3xl">Why Choose Babes</h2>
+            <h2 className="font-serif text-2xl tracking-wide text-gold md:text-3xl">Why Choose Babes</h2>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {[
@@ -98,7 +98,7 @@ export default function AboutPage() {
               },
             ].map((value) => (
               <div key={value.title} className="rounded-2xl bg-card border border-border p-6">
-                <h3 className="font-serif text-lg tracking-wide text-foreground">{value.title}</h3>
+                <h3 className="font-serif text-lg tracking-wide text-gold">{value.title}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{value.description}</p>
               </div>
             ))}
@@ -110,7 +110,7 @@ export default function AboutPage() {
       <section className="px-5 pb-16 md:px-12 md:pb-24">
         <div className="mx-auto max-w-6xl">
           <div className="rounded-2xl bg-primary px-6 py-14 text-center md:px-16 md:py-20">
-            <h2 className="font-serif text-2xl tracking-wide text-primary-foreground md:text-3xl text-balance">
+            <h2 className="font-serif text-2xl tracking-wide text-gold md:text-3xl text-balance">
               Ready to Experience the Best?
             </h2>
             <p className="mt-3 text-xs leading-relaxed text-primary-foreground/70 max-w-sm mx-auto">

@@ -31,17 +31,14 @@ export function SiteHeader() {
       <div className="mx-auto flex items-center justify-between px-5 py-5 md:px-8">
         <Link href="/" className="flex items-center gap-2" title="Home">
           <Image
-            src="/images/logo.png"
+            src="/images/babes-logo.svg"
             alt="Babes"
             width={32}
             height={40}
             className="h-10 w-auto"
           />
           <span
-            className={cn(
-              "font-serif text-xl tracking-wide",
-              isHome ? "text-card" : "text-foreground"
-            )}
+            className="font-serif text-xl tracking-wide text-gold"
           >
             Babes
           </span>

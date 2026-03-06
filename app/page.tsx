@@ -67,14 +67,14 @@ function HeroSection() {
       {/* Logo */}
       <div className="absolute top-24 left-6 md:left-12 flex items-center gap-4">
         <Image
-          src="/images/logo.png"
+          src="/images/babes-logo.svg"
           alt="Babes"
           width={80}
           height={100}
           className="h-20 w-auto md:h-28"
         />
         <div>
-          <h1 className="font-serif text-4xl tracking-wide text-card md:text-6xl">
+          <h1 className="font-serif text-4xl tracking-wide text-gold md:text-6xl">
             Babes
           </h1>
           <p className="mt-1 text-[10px] tracking-[0.4em] uppercase text-card/70">
@@ -98,7 +98,7 @@ function FeaturedSection() {
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">Discover</p>
-            <h2 className="font-serif text-2xl tracking-wide text-foreground md:text-3xl">Featured Models</h2>
+            <h2 className="font-serif text-2xl tracking-wide text-gold md:text-3xl">Featured Models</h2>
           </div>
           <Link
             href="/models"

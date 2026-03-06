@@ -12,7 +12,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-2xl">
         <div className="mb-12 text-center">
           <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">Reach Out</p>
-          <h1 className="font-serif text-3xl tracking-wide text-foreground md:text-4xl">Contact Us</h1>
+          <h1 className="font-serif text-3xl tracking-wide text-gold md:text-4xl">Contact Us</h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             For bookings and inquiries, reach us directly via Telegram or WhatsApp.
           </p>

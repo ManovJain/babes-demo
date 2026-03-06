@@ -22,7 +22,7 @@ export function ModelCard({ model, priority = false }: ModelCardProps) {
         <div className="absolute inset-0 bg-foreground/0 transition-colors duration-500 group-hover:bg-foreground/10" />
       </div>
       <div className="mt-4">
-        <h3 className="font-serif text-lg tracking-wide text-foreground">{model.name}</h3>
+        <h3 className="font-serif text-lg tracking-wide text-gold">{model.name}</h3>
         <p className="mt-1 text-xs tracking-[0.15em] uppercase text-muted-foreground">
           {model.location}
         </p>

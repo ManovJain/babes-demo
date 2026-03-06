@@ -12,7 +12,7 @@ export default function BookingPage() {
       <div className="mx-auto max-w-2xl">
         <div className="mb-10 text-center">
           <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">Make a Reservation</p>
-          <h1 className="font-serif text-3xl tracking-wide text-foreground md:text-4xl">Book a Companion</h1>
+          <h1 className="font-serif text-3xl tracking-wide text-gold md:text-4xl">Book a Companion</h1>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Fill out your preferences below and we&apos;ll connect you via WhatsApp or Telegram.
           </p>

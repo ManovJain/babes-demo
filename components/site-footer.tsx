@@ -8,12 +8,12 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="flex items-center gap-2" title="Home">
             <Image
-              src="/images/logo.png"
+              src="/images/babes-logo.svg"
               alt="Babes"
               width={28}
               height={28}
             />
-            <span className="font-serif text-lg text-foreground">
+            <span className="font-serif text-lg text-gold">
               Babes
             </span>
           </Link>

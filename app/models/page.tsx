@@ -13,7 +13,7 @@ export default function ModelsPage() {
         {/* Header */}
         <div className="mb-10">
           <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Browse Our Roster</p>
-          <h1 className="text-3xl font-serif text-foreground">Our Models</h1>
+          <h1 className="text-3xl font-serif text-gold">Our Models</h1>
         </div>
         
         <ModelsGrid models={models} />
